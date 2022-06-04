@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'dbCRM',
-    'USER': 'ramil',
+    'NAME': 'django_db',
+    'USER': 'crm',
     'PASSWORD': 'Ra*179il',
     'HOST': '127.0.0.1',
     'PORT': '5432'
