@@ -2,9 +2,37 @@
 
 
 {% block content %}
-    <h1>Страница приема заявок ФИЗИЧЕСКИХ ЛИЦ</h1>
+    <h2>Страница приема заявок ФИЗИЧЕСКИХ ЛИЦ</h2>
+
 
 <div class="col-md-7 col-lg-8">
+
+  <hr class="my-4">
+        <div class="row g-3">
+            <div class="col-sm-3">
+              <font color="blue">
+              <label for="ddate" class="form-fields-group-label">Дата приема заявки</label></font>
+              <input type="text" class="form-control" id="ddate" placeholder="00-00-0000" value="" required="">
+              <div class="invalid-feedback">
+                Дата приема заявки.
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <font color="blue">
+              <label for="dnomer" class="form-fields-group-label">Номер заявки</label></font>
+              <input type="text" class="form-control" id="dnomer" placeholder="000/0000" value="" required="">
+              <div class="invalid-feedback">
+                Номер заявки.
+              </div>
+              </div>
+        </div>
+
+
+
+  <hr class="my-4">
+
+
         <h4 class="mb-3">Данные заявители:</h4>
         <form class="needs-validation was-validated" novalidate="">
           <div class="row g-3">
@@ -73,7 +101,7 @@
 
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">Адрес прописки совподает с фактическим адресом</label>
+            <label class="form-check-label" for="address2">Адрес прописки совпадает с фактическим адресом</label>
           </div>
 
             <div class="col-12">
@@ -97,7 +125,7 @@
           <h4 class="mb-3">Паспортные данные</h4>
 
             <div class="col-sm-6">
-              <label for="pasport" class="form-label">Серия-номер</label>
+              <label for="snumber" class="form-label">Серия-номер</label>
               <input type="text" class="form-control" id="snumber" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 Серия и номер паспорта.
@@ -105,7 +133,7 @@
             </div>
 
             <div class="col-sm-6">
-              <label for="pasport" class="form-label">Дата выдачи</label>
+              <label for="dpasport" class="form-label">Дата выдачи</label>
               <input type="text" class="form-control" id="dpasport" placeholder="00-00-0000" value="" required="">
               <div class="invalid-feedback">
                 Дата выдачи паспорта.
@@ -113,7 +141,7 @@
             </div>
 
             <div class="col-sm-6">
-              <label for="pasport" class="form-label">Кем выдан</label>
+              <label for="provided" class="form-label">Кем выдан</label>
               <input type="text" class="form-control" id="provided" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 Кем выдан паспорт.
@@ -121,6 +149,36 @@
             </div>
 
   <hr class="my-4">
+  <hr class="my-4">
+  <hr class="my-4">
+  <hr class="my-4">
+
+          <h4 class="mb-3">Документы</h4>
+
+            <form enctype="multipart/form-data" method="post">
+   <p>Скан паспорта</p>
+   <p><input type="file" name="photo" accept="jpeg/png/pdf">
+   <input type="submit" value="Отправить"></p>
+  </form>
+
+            <!--<button type="button" class="btn btn-outline-secondary">Secondary</button><br>-->
+            <!--<button type="button" class="btn btn-outline-secondary">Secondary</button><br>-->
+            <!--<button type="button" class="btn btn-outline-secondary">Secondary</button><br>-->
+            <!--<button type="button" class="btn btn-outline-secondary">Secondary</button><br>-->
+            <!--<button type="button" class="btn btn-outline-secondary">Secondary</button><br>-->
+            <!--<button type="button" class="btn btn-outline-secondary">Secondary</button><br>-->
+            <!--<button type="button" class="btn btn-outline-secondary">Secondary</button><br>-->
+
+          <div class="my-3">
+
+  <hr class="my-4">
+  <hr class="my-4">
+  <hr class="my-4">
+  <hr class="my-4">
+
+
+
+
 
 
 
