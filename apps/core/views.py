@@ -18,8 +18,12 @@ def index(request):
     return render(request, 'core/index.html')
 
 
-def reception(request):
-    return render(request, 'core/reception.html')
+def receptionFL(request):
+    return render(request, 'core/receptionFL.html')
+
+
+def receptionUL(request):
+    return render(request, 'core/receptionUL.html')
 
 
 def applicant(request):

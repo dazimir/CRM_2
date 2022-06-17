@@ -1,0 +1,187 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+    <h1>Страница приема заявок ФИЗИЧЕСКИХ ЛИЦ</h1>
+
+<div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Данные заявители:</h4>
+        <form class="needs-validation was-validated" novalidate="">
+          <div class="row g-3">
+
+             <div class="col-sm-6">
+              <label for="lastName" class="form-label">Фамилия:</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Действительная фамилия обязательна.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Имя:</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Действительное имя обязательна.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Отчество:</label>
+              <input type="text" class="form-control" id="patronymic" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Действительное отчество обязательна.
+              </div>
+            </div>
+
+  <hr class="my-4">
+  <h4 class="mb-3">Контактные данные заявителя:</h4>
+
+            <div class="col-12">
+              <label for="phone1" class="form-label">Телефон <span class="text-muted">(Optional)</span></label>
+              <input type="phone" class="form-control" id="phone1" placeholder="8-917.......">
+              <div class="invalid-feedback">
+                Введите основной контактый телефон.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="phone2" class="form-label">Телефон <span class="text-muted">(Optional)</span></label>
+              <input type="phone" class="form-control" id="phone2" placeholder="8-917.......">
+              <div class="invalid-feedback">
+                Введите дополнительный контактый телефон.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Укажите email для связи.
+              </div>
+            </div>
+
+
+  <hr class="my-4">
+
+            <div class="col-12">
+              <label for="address" class="form-label">Адрес</label>
+              <input type="text" class="form-control" id="address" placeholder="г. Нижнекамск, пр-кт. Химиков, д.1, кв.2" required="">
+              <div class="invalid-feedback">
+                Адрес прописки.
+              </div>
+            </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Адрес прописки совподает с фактическим адресом</label>
+          </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label">Адрес фактический<span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="в случае необходимости">
+            </div>
+
+          </div>
+
+  <hr class="my-4">
+
+          <h4 class="mb-3">Согласие на обработку персональных данных</h4>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="approval">
+            <label class="form-check-label" for="same-address">Согласие на обработку персональных данных</label>
+          </div>
+
+  <hr class="my-4">
+
+          <h4 class="mb-3">Паспортные данные</h4>
+
+            <div class="col-sm-6">
+              <label for="pasport" class="form-label">Серия-номер</label>
+              <input type="text" class="form-control" id="snumber" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Серия и номер паспорта.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="pasport" class="form-label">Дата выдачи</label>
+              <input type="text" class="form-control" id="dpasport" placeholder="00-00-0000" value="" required="">
+              <div class="invalid-feedback">
+                Дата выдачи паспорта.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="pasport" class="form-label">Кем выдан</label>
+              <input type="text" class="form-control" id="provided" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Кем выдан паспорт.
+              </div>
+            </div>
+
+  <hr class="my-4">
+
+
+
+
+
+          <h4 class="mb-3">Payment</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+              <label class="form-check-label" for="credit">Credit card</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="debit">Debit card</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+        </form>
+      </div>
+
+{% endblock %}
