@@ -7,6 +7,70 @@ CRM "ГК-НК"
 
 {% block content %}
     <h1>Это у кого какие дела и на какой стадии</h1>
-    <p>Всякая фигня для контроля выполнения дел и задач</p>
+    <h1>Запись в Б/Д  организацию</h1>
+
+<form method="post">
+    {% csrf_token %}
+<div class="col-md-7 col-lg-8">
+
+  <hr class="my-4">
+
+
+
+
+
+        <h4 class="mb-3">Данные заявители:</h4>
+        <form class="needs-validation was-validated" novalidate="">
+          <div class="row g-3">
+
+             <div class="col-sm-6">
+              <label for="lastName" class="form-label">Фамилия:</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Действительная фамилия обязательна.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Имя:</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Действительное имя обязательна.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Отчество:</label>
+              <input type="text" class="form-control" id="patronymic" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Действительное отчество обязательна.
+              </div>
+            </div>
+
+  <hr class="my-4">
+  <h4 class="mb-3">Контактные данные заявителя:</h4>
+
+              <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Укажите email для связи.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="phone1" class="form-label">Телефон <span class="text-muted">(Optional)</span></label>
+              <input type="phone" class="form-control" id="phone1" placeholder="8-917.......">
+              <div class="invalid-feedback">
+                Введите основной контактый телефон.
+              </div>
+            </div>
+
+
+
+         <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Принять заявку</button>
+        </form>
 
 {% endblock %}
