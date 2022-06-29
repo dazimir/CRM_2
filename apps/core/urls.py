@@ -15,5 +15,6 @@ urlpatterns = [
     path('executor', core_views.executor, name='executor'),
     path('report', core_views.report, name='report'),
     path('waiting', core_views.waiting, name='waiting'),
-    path('connection', core_views.connection, name='connection')
+    path('connection', core_views.connection, name='connection'),
+    path('addTasks', core_views.addTask, name='addTasks')
 ]

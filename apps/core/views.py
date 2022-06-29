@@ -1,13 +1,9 @@
 from django.http import HttpRequest, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Task
+from .forms import TaskForm
+#from .forms import CustomerForm
 
-
-# def main(request: HttpRequest) -> JsonResponse:
-#     return JsonResponse(data={
-#         "error": False,
-#         "status": "Hello from Ramil Django",
-#         "details": None
-#     }, status=200)
 
 
 def admin(request):
@@ -39,11 +35,12 @@ def task_status(request):
 
 
 def executor(request):
-    return render(request, 'core/executor.html')
+     return render(request, 'core/executor.html')
 
 
 def report(request):
-    return render(request, 'core/report.html')
+    tasks = Task.objects.order_by('-id')
+    return render(request, 'core/report.html', {'title': 'Главная страница из views.py', 'tasks': tasks})
 
 
 def waiting(request):
@@ -53,3 +50,20 @@ def waiting(request):
 def connection(request):
     return render(request, 'core/connection.html')
 
+
+def addTask(request):
+    error = ''
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/report')
+        else:
+            error = 'ФОРМА НЕ ВЕРНАЯ!!!'
+
+    form = TaskForm()
+    context = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'core/tasks_plus.html', context)

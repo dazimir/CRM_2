@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Добавить задания в Б/Д
+{% endblock %}
+
+
+{% block content %}
+    <h1>Это страница добавления в б/д задач</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+
+
+        <button type="submit" class="btn btn-success">В Б/Д</button>
+        <span>{{ error }}</span>
+    </form>
+
+{% endblock %}

@@ -1,8 +1,13 @@
-from .models import Customer
-from django.forms import ModelForm
+from .models import Task
+from django.forms import ModelForm, TextInput, Textarea
 
 
-class CustomerForm(ModelForm):
+class TaskForm(ModelForm):
     class Meta:
-        model = Customer
-        field = ['first_name', 'last_name', 'email', 'phone']
+        model = Task
+        fields = ['title', 'task']
+        widgets = {
+            "title": TextInput(attrs={'class': 'form-control', 'placeholder': 'название задачи 2'}),
+            "tasks": Textarea(attrs={'class': 'form-control', 'placeholder': 'текст задачи 2'})
+        }
+

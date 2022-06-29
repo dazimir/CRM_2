@@ -1,12 +1,24 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-CRM "ГК-НК"
+{{ title }}
 {% endblock %}
 
 
 {% block content %}
     <h1>Это Отчеты дела в ожидании/выполненные/в работе/долги</h1>
-    <p>Всякая таблицы и сообщения</p>
+    <p>Всякая таблицы и сообщения</p><br>
+    <p>---------------- BEGIN ----------------</p><br>
+    {% if tasks %}
+    {% for el in tasks %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{ el.title }}</h3>
+        <p>{{ el.task }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+        <h3>нет записей!!</h3>
+    {% endif %}
 
+    <p>---------------- END ------------------</p><br>
 {% endblock %}
