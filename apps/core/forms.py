@@ -10,4 +10,4 @@ class TaskForm(ModelForm):
             "title": TextInput(attrs={'class': 'form-control', 'placeholder': 'название задачи 2'}),
             "tasks": Textarea(attrs={'class': 'form-control', 'placeholder': 'текст задачи 2'})
         }
-
+#  из дома
