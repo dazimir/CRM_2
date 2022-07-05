@@ -6,15 +6,36 @@ CRM "ГК-НК"
 
 
 {% block content %}
-    <h1>Это Дела которые в работе и ожидании</h1>
-    <p>Всякая фигня календари счетчики времени</p>
+    <h1>Это ВРЕМЕННО инвфо по ОПЕРАТОРАМ</h1>
+    <p>Всякая фигня </p>
     <p>Инфо по операторам =====</p>
 <p>---------------- BEGIN ----------------</p><br>
 
+    {% if authentication %}
+    {% for el in authentication %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{ el.user_nickname }}</h3>
+        <p>{{ el.user_name }}</p>
+        <p>{{ el.user_lastname }}</p>
+        <p>{{ el.user_patronymic }}</p>
+        <p>{{ el.user_birthday }}</p>
+        <p>{{ el.user_registration }}</p>
+        <p>{{ el.user_phone }}</p>
+        <p>{{ el.user_email }}</p>
+        <p>{{ el.user_photo }}</p>
+        <p>{{ el.user_rang }}</p>
 
-{% for img in stepfieldst %}
-<img src="{{ img.main_photo.url }}" >
-{% endfor %}
+
+    </div>
+    {% endfor %}
+    {% else %}
+        <h3>нет записей!!</h3>
+    {% endif %}
+
+
+<!--{% for img in stepfieldst %}-->
+<!--<img src="{{ img.main_photo.url }}" >-->
+<!--{% endfor %}-->
 
 
 <p>---------------- END ----------------</p><br>

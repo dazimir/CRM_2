@@ -1,9 +1,9 @@
 from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render, redirect
 from .models import Task
+from .models import Authentication
 from .forms import TaskForm
-#from .forms import CustomerForm
-
+from .forms import AuthenticationForm
 
 
 def admin(request):
@@ -43,8 +43,12 @@ def report(request):
     return render(request, 'core/report.html', {'title': 'Главная страница из views.py', 'tasks': tasks})
 
 
+# =========================================================
 def waiting(request):
-    return render(request, 'core/waiting.html')
+    authentication = Authentication.objects.order_by('-id')
+    return render(request, 'core/waiting.html',{'title': 'Информация об операторах', 'authentication': authentication})
+# =========================================================
+
 
 
 def connection(request):
@@ -67,3 +71,21 @@ def addTask(request):
         'error': error
     }
     return render(request, 'core/tasks_plus.html', context)
+
+
+def addOperator(request):
+    error = ''
+    if request.method == 'POST':
+        form = AuthenticationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/waiting')
+        else:
+            error = 'ФОРМА НЕ ВЕРНАЯ!!!'
+
+    form = AuthenticationForm()
+    context = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'core/addOperator.html', context)
