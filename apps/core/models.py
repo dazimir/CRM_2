@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import QuerySet
+from django import forms
 
 
 class Authentication(models.Model):
@@ -10,8 +11,8 @@ class Authentication(models.Model):
     user_birthday = models.DateField('Дата рождения')
     user_registration = models.DateField('Дата регистрации пользователя')
     user_phone = models.CharField('Телефон оператора', max_length=12)
-    user_email = models.EmailField()
-    user_photo = models.ImageField(upload_to='static', height_field=None, width_field=None, max_length=100)
+    user_email = models.CharField('email', max_length=50)
+    user_photo = models.CharField('потом будет фото', max_length=50) #models.ImageField(upload_to='static', height_field=None, width_field=None, max_length=100)
     user_rang = models.IntegerField()
 
     def __str__(self):
